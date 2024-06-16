@@ -9,7 +9,7 @@ const client = new DynamoDBClient({});
 
 const dynamo = DynamoDBDocumentClient.from(client);
 
-const tableName = "cmtr-b3ebc0e6-Events";
+const tableName = "cmtr-b3ebc0e6-Events-test";
 
 
 export const handler = async (event, context) => {
