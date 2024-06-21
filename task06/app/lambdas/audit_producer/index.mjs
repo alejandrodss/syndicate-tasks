@@ -18,14 +18,14 @@ const createDynamoPayload = (event) => {
             return {
                 "newValue": {
                     "key": dynamodb.NewImage.key.S,
-                    "value": dynamodb.NewImage.value.N
+                    "value": parseInt(dynamodb.NewImage.value.N)
                 }
             }
         case "MODIFY":
             return {
                 "updatedAttribute": "value",
-                "oldValue": dynamodb.OldImage.value.N,
-                "newValue": dynamodb.NewImage.value.N
+                "oldValue": parseInt(dynamodb.OldImage.value.N),
+                "newValue": parseInt(dynamodb.NewImage.value.N)
             }
         default:
             return {
